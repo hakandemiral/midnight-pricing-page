@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+    font-family: 'Nunito', sans-serif;
+  
+    &:focus {
+      outline: 0;
+    }
+  }
+  
+  html, body {
+    height: 100%;
+  }
+
+  body {
+      background-color: #0F0F1B;
+      color: #fff;
+      display: grid;
+      place-items: center;
+  }
+
+  .component-pricing {
+      text-align: center;
+
+      h3 {
+          font-size: 26px;
+          font-weight: 700;
+          margin-bottom: 15px;
+      }
+
+      p {
+          width: 467px;
+          font-size: 18px;
+          font-weight: 400;
+          margin: 0 auto 64px auto;
+      }
+
+      ul {
+          display: flex;
+
+          li {
+              width: 265px;
+              height: 267px;
+              background-color: #171727;
+              border-radius: 20px;
+              cursor: pointer;
+              padding: 35px 35px 45px 35px;
+              transition: 150ms background-color;
+              text-align: left;
+              display: flex;
+              flex-direction: column;
+              position: relative;
+
+              &.best-price::after {
+                  content: 'Best price';
+                  position: absolute;
+                  width: 110px;
+                  height: 30px;
+                  background-color: #A0E0B2;
+                  border-radius: 15px;
+                  text-align: center;
+                  line-height: 30px;
+                  color: #171727;
+                  top: -15px;
+                  left: 50%;
+                  transform: translateX(-50%);
+              }
+
+              &:not(:last-child) {
+                  margin-right: 45px;
+              }
+
+              &.advantageous {
+                  background-color: #242486;
+              }
+
+              &:hover {
+                background-color: #242486;
+
+                & > .get::after {
+                    margin-left: 15px;
+                }
+              }
+
+              h4 {
+                  font-weight: 700;
+                  font-size: 22px;
+                  margin-bottom: 20px;
+              }
+
+              .price {
+                  font-size: 26px;
+                  font-weight: 700;
+              }
+
+              span {
+                  margin-top: 4px;
+                  font-size: 16px;
+                  font-weight: 400;
+              }
+
+              .get {
+                  margin-top: auto;
+
+                  &::after {
+                      content: url(../assets/images/right-arrow.svg);
+                      transition: 150ms margin-left;
+                      margin-left: 10px;
+                  }
+              }
+          }
+      }
+
+      a {
+          display: inline-block;
+          margin-top: 64px;
+          padding: 19px 45px;
+          border: solid 2px #1F1F35;
+          border-radius: 10px;
+          color: #8080B9;
+          transition: 150ms all;
+
+          &:visited {
+              color: #8080B9;
+          }
+
+          &:hover {
+              color: lighten($color: #8080B9, $amount: 15);
+              border-color: lighten($color: #1F1F35, $amount: 15);
+          }
+      }
+  }
